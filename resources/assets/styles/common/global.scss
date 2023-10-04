@@ -68,17 +68,41 @@ a {
     }
   }
 }
-
+.caja-1{
+  height: 60%;
+}
+.caja-2{
+  height: 40%;
+}
+.caja-4{
+  a{
+    color: black;
+  }
+}
 .rotate-270deg{
   transform: rotate(270deg);
 }
-
 .grid-3x2{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
 
-@media (max-width: 500){
-  
+@media (min-width: 750px) {
+  .caja-4{
+    div{
+      a{
+        transform: rotate(270deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .caja-2{
+    flex-direction: column;
+    div{
+      width: 100% !important;
+    }
+  }
 }
