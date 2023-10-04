@@ -1,4 +1,4 @@
-<div style="height: 100vh">
+<div style="height: 100vh; overflow: hidden;">
     <div class="columns is-gapless is-full-height">
 
       {{-- columna 1 --}}
@@ -111,7 +111,7 @@
         <div class="navigation-plus has-padding-20 has-background-dark is-flex is-justify-content-center is-align-items-center">
           <div class="image is-48x48" style="background: url(@asset('images/plus-circle.svg'))center center/contain no-repeat"></div>
         </div>
-        <div class="items-row is-flex is-justify-content-space-around is-full-width has-text-align-center has-padding-30">
+        <div class="items-row is-flex is-justify-content-space-around is-full-width has-text-align-center has-padding-top-30 has-padding-bottom-30">
           <a class="" href="https://www.instagram.com/katherineboean/">Instagram</a>
           <a class="" href="email: hello@katherineboean.com">Email</a>
           <a class="" href="https://www.linkedin.com/in/katherine-boean/">Linkedin</a>
