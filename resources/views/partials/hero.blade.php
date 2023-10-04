@@ -1,4 +1,4 @@
-<div style="height: 100vh; overflow: hidden;">
+<div style="height: 100vh">
     <div class="columns is-gapless is-full-height">
 
       {{-- columna 1 --}}
@@ -107,7 +107,7 @@
       </div>
 
       {{-- columna 3 --}}
-      <div class="navigation column is-1 has-background-primary">
+      <div class="navigation column is-1 has-background-primary" style="overflow: hidden">
         <div class="navigation-plus has-padding-20 has-background-dark is-flex is-justify-content-center is-align-items-center">
           <div class="image is-48x48" style="background: url(@asset('images/plus-circle.svg'))center center/contain no-repeat"></div>
         </div>
