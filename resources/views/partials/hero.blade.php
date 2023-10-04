@@ -23,7 +23,7 @@
                 </div>
             </div>
           </div>
-          <div class="column has-text-align-right">
+          <div class="has-text-align-right">
             <span class="has-text-black" style="text-wrap: nowrap;">Schedule a meeting</span>
           </div>          
         </div>
