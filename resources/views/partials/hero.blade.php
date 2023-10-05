@@ -1,3 +1,43 @@
+            <script>
+              function data(){
+                return {
+                  
+                  information: [
+                    {
+                      id: 1,
+                      titulo: 'NXTVISOR',
+                      mensaje: 'We guide around strengthening and implementing financial strategies for business owners, start-ups and enterprises.'
+                    },
+                    {
+                      id: 2,
+                      titulo: 'WF&F',
+                      mensaje: 'A space to learn and encourage others based on faith and finances.'
+                    },
+                    {
+                      id: 3,
+                      titulo: 'HYC',
+                      mensaje: 'Financial fundamentals that can be applied both personally and businesswise.'
+                    },
+                    {
+                      id: 4,
+                      titulo: 'GSG',
+                      mensaje: 'Podcast created to amplify the voices of many through faith, finances, family, wellness, and also fun.'
+                    },
+                    {
+                      id: 5,
+                      titulo: 'KB Realty',
+                      mensaje: 'Focused on real estate in the areas north of Atlanta.'
+                    },
+                  ]
+                  information.forEach((item, time) => {
+                    setTimeout(() => {
+                      console.log(`id: ${item.id}, titulo: ${item.titulo}, mensaje: ${item.mensaje}`);
+                    }, time * 2000);
+                  });
+                }
+              }
+                  
+            </script>
 <div style="height: 100vh">
     <div class="columns is-gapless is-full-height">
 
@@ -33,61 +73,21 @@
           <div class="column is-7 is-paddingless">
             <div class="is-full-height" style="background: url(@asset('images/Rectangle-image.svg'))center center/cover no-repeat; opacity:0.5"></div>
           </div>
-          <div class="column is-5 is-clipped" style="">
-            <div class="has-text-light has-padding-30 is-full-height is-flex is-flex-direction-column is-justify-content-space-between">
-              <p class="is-size-3 has-text-right">
-                01
-              </p>
-              <div>
-                <h4 class="is-size-4 has-text-light">
-                  NXTVISOR
-                </h4>
-                <div class="is-flex is-align-items-center is-half-width">
-                  @include('partials.decorator', ['color'=>'#F2F2F2'])
+          <div class="column is-5 is-clipped">
+            <template x-init="data()" x-for="(item, time) in information" :key="item.id">
+              <div class="has-text-light has-padding-30 is-full-height is-flex is-flex-direction-column is-justify-content-space-between">
+                <p class="is-size-3 has-text-right" x-text='item.id'></p>
+                <div>
+                  <h4 class="is-size-4 has-text-light" x-text='item.titulo'></h4>
+                  <div class="is-flex is-align-items-center is-half-width">
+                    @include('partials.decorator', ['color'=>'#F2F2F2'])
+                  </div>
+                  <p class="is-size-6" x-text='item.mensaje'></p>
                 </div>
-                <p class="is-size-6">
-                  We guide around strengthening and implementing financial strategies for business owners, start-ups and enterprises.
-                </p>
               </div>
-            </div>
+            </template>
+            
           </div>
-
-          {{-- <div class="is-full-height has-text-white is-flex is-flex-direction-column is-align-content-center has-padding-30" style="width: 45%;">
-            <span class="is-size-3 is-1 has-text-white has-text-right has-padding-bottom-20 m-0">02</span>
-            <h4>WF&F</h4>
-            <div class="is-flex is-align-items-center">
-              @include('partials.decorator', ['color'=>'#F2F2F2'])
-            </div>
-            <p>A space to learn and encourage others based on faith and finances.</p>
-          </div> --}}
-
-          {{-- <div class="is-full-height has-text-white is-flex is-flex-direction-column is-align-content-center has-padding-30" style="width: 45%;">
-            <span class="is-size-3 is-1 has-text-white has-text-right has-padding-bottom-20 m-0">01</span>
-            <h4>HYC</h4>
-            <div class="is-flex is-align-items-center">
-              @include('partials.decorator', ['color'=>'#F2F2F2'])
-            </div>
-            <p>Financial fundamentals that can be applied both personally and businesswise</p>
-          </div> --}}
-
-          {{-- <div class="is-full-height has-text-white is-flex is-flex-direction-column is-align-content-center has-padding-30" style="width: 45%;">
-            <span class="is-size-3 is-1 has-text-white has-text-right has-padding-bottom-20 m-0">01</span>
-            <h4>GSG</h4>
-            <div class="is-flex is-align-items-center">
-              @include('partials.decorator', ['color'=>'#F2F2F2'])
-            </div>
-            <p>Podcast created to amplify the voices of many through faith, finances, family, wellness, and also fun.</p>
-          </div> --}}
-
-          {{-- <div class="is-full-height has-text-white is-flex is-flex-direction-column is-align-content-center has-padding-30" style="width: 45%;">
-            <span class="is-size-3 is-1 has-text-white has-text-right has-padding-bottom-20 m-0">01</span>
-            <h4>KB Realty</h4>
-            <div class="is-flex is-align-items-center">
-              @include('partials.decorator', ['color'=>'#F2F2F2'])
-            </div>
-            <p>Focused on real estate in the areas north of Atlanta.</p>
-          </div> --}}
-          
         </div>
       </div>
 
