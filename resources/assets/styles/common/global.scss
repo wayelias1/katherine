@@ -102,32 +102,32 @@ a {
 }
 .carrusel{
   animation: show 4s infinite;
-  // position: relative;
-  // &.active{
-  //   transform: translateX(0);
-  // }
-  // transition: 2s;
-  // transform: translateX(-100%);
-  // opacity: 0;
-  // animation-timing-function: linear;
-  // animation-name: carrusel;
-  // animation-duration: 0.5s;
-  // animation-delay: 3.5s;
-  // animation-iteration-count: infinite;
-  // animation-direction: alternate;
 }
 
 .has-text-hover-light{
-  transition: 0.1s;
+  color: $black;
+  transition: 0.2s;
   &:hover{
     color: $light !important;
   }
 }
 .has-text-hover-primary{
-  color: black;
-  transition: 0.1s;
+  color: $black;
+  transition: 0.2s;
   &:hover{
     color: $primary !important;
+  }
+}
+
+.navigation-plus {
+  .plus-button {
+    transition: 0.2s;
+  }
+
+  &:hover {
+    .plus-button {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -154,30 +154,47 @@ a {
     } 
   }
 }
-// @keyframes carrusel{
-//   from{
-//     opacity: 0;
-//   }
-//   to{
-//     opacity: 1;
-//   }
-// }
+
+.contacts {
+  &:before {
+    content: "";
+    height: 1px;
+    width: 10%;
+    left: 0;
+    top: calc(50% - 1px);
+    background-color: #000;
+    position: absolute;
+  }
+  &:after {
+    content: "";
+    height: 1px;
+    width: 10%;
+    right: 0;
+    top: calc(50% - 1px);
+    background-color: #000;
+    position: absolute;
+  }
+}
+
 @keyframes show{
   0% {
       opacity: 0;
-}    
+  }    
   10%{
     opacity: 0;
   }
+
   20% {
       opacity: 1;
-}    80% {
+  }    
+  80% {
       opacity: 1;
-}    
+  } 
+
   90%{
     opacity: 0;
   }
-100% {
-      opacity: 0;
-}
+  100% {
+    opacity: 0;
+  }
 }
