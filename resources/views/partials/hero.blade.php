@@ -31,10 +31,13 @@
         </div>
         <div class="column is-5 is-clipped" x-data="data">
           <div class="has-text-light has-padding-30 is-full-height is-flex is-flex-direction-column is-justify-content-space-between carrusel active" id="carrusel">
-            <p class="is-size-3 has-text-right" x-text="item.id">1</p>
+            <p class="is-size-3 has-text-right is-flex is-justify-content-flex-end">
+              <span>0</span>
+              <span  x-text="item.id">1</span>
+            </p>
             <div>
               <h4 class="is-size-4 has-text-light" x-text="item.titulo">NXTVISOR</h4>
-              <div class="is-flex is-align-items-center is-half-width">
+              <div class="is-flex is-align-items-center is-half-width has-padding-top-5 has-padding-bottom-10">
                 @include('partials.decorator', ['color'=>'#F2F2F2'])
               </div>
               <p class="is-size-6" x-text="item.mensaje">We guide around strengthening and implementing financial strategies for business owners, start-ups and enterprises.</p>
@@ -46,27 +49,27 @@
             return {
               information: [
                 {
-                  id: 1,
+                  id: 01,
                   titulo: 'NXTVISOR',
                   mensaje: 'We guide around strengthening and implementing financial strategies for business owners, start-ups and enterprises.'
                 },
                 {
-                  id: 2,
+                  id: 02,
                   titulo: 'WF&F',
                   mensaje: 'A space to learn and encourage others based on faith and finances.'
                 },
                 {
-                  id: 3,
+                  id: 03,
                   titulo: 'HYC',
                   mensaje: 'Financial fundamentals that can be applied both personally and businesswise.'
                 },
                 {
-                  id: 4,
+                  id: 04,
                   titulo: 'GSG',
                   mensaje: 'Podcast created to amplify the voices of many through faith, finances, family, wellness, and also fun.'
                 },
                 {
-                  id: 5,
+                  id: 05,
                   titulo: 'KB Realty',
                   mensaje: 'Focused on real estate in the areas north of Atlanta.'
                 },
