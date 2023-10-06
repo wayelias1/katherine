@@ -87,7 +87,6 @@ a {
 }
 
 .navigation{
-
   a{
     color: black;
   }
@@ -101,7 +100,36 @@ a {
 .rotate-270deg{
   transform: rotate(270deg);
 }
+.carrusel{
+  animation: show 4s infinite;
+  // position: relative;
+  // &.active{
+  //   transform: translateX(0);
+  // }
+  // transition: 2s;
+  // transform: translateX(-100%);
+  // opacity: 0;
+  // animation-timing-function: linear;
+  // animation-name: carrusel;
+  // animation-duration: 0.5s;
+  // animation-delay: 3.5s;
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate;
+}
 
+.has-text-hover-light{
+  transition: 0.1s;
+  &:hover{
+    color: $light !important;
+  }
+}
+.has-text-hover-primary{
+  color: black;
+  transition: 0.1s;
+  &:hover{
+    color: $primary !important;
+  }
+}
 
 // 
 // media
@@ -126,13 +154,30 @@ a {
     } 
   }
 }
-
-// @media (max-width: 500px){
-//   .services {
-//     flex-direction: column;
-
-//     div {
-//       width: 100% !important;
-//     }
+// @keyframes carrusel{
+//   from{
+//     opacity: 0;
+//   }
+//   to{
+//     opacity: 1;
 //   }
 // }
+@keyframes show{
+  0% {
+      opacity: 0;
+}    
+  10%{
+    opacity: 0;
+  }
+  20% {
+      opacity: 1;
+}    80% {
+      opacity: 1;
+}    
+  90%{
+    opacity: 0;
+  }
+100% {
+      opacity: 0;
+}
+}

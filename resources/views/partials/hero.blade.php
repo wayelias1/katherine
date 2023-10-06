@@ -30,7 +30,7 @@
           <div class="is-full-height" style="background: url(@asset('images/Rectangle-image.svg'))center center/cover no-repeat; opacity:0.5"></div>
         </div>
         <div class="column is-5 is-clipped" x-data="data">
-          <div class="has-text-light has-padding-30 is-full-height is-flex is-flex-direction-column is-justify-content-space-between">
+          <div class="has-text-light has-padding-30 is-full-height is-flex is-flex-direction-column is-justify-content-space-between carrusel active" id="carrusel">
             <p class="is-size-3 has-text-right" x-text="item.id">1</p>
             <div>
               <h4 class="is-size-4 has-text-light" x-text="item.titulo">NXTVISOR</h4>
@@ -75,11 +75,18 @@
               currentIndex: 0,
               get item(){
                 return this.information[this.currentIndex];
+                
               },
               init() {
+                let carrusel = document.querySelector('#carrusel');
                 setInterval(() => {
-                  this.currentIndex = (this.currentIndex + 1) % this.information.length;
-                  }, 3000);
+                  // setInterval(() => {
+                  //   carrusel.classList.add('carrusel');
+                  // }, 4000);
+                  //   carrusel.classList.remove('carrusel');
+                    this.currentIndex = (this.currentIndex + 1) % this.information.length;
+                    
+                  }, 4000);
                 }
               }
             }
@@ -93,20 +100,20 @@
       <div class="is-relative" style="background: url(@asset('images/KATHERINE.svg')) center center / cover no-repeat; height: 100vh;"></div>
       <div class="is-flex is-justify-content-space-around is-align-items-center is-full-width has-background-white"
            style="height: 100px; position: absolute; bottom: 0;">
-        <a class="has-text-black" href="tel: +1 404 777 5857">+1 404 777 5857</a>
-        <a class="has-text-black" href="https://www.google.com/maps/place/Atlanta,+Georgia,+EE.+UU./@33.7675434,-84.5849409,11z/data=!3m1!4b1!4m6!3m5!1s0x88f5045d6993098d:0x66fede2f990b630b!8m2!3d33.748752!4d-84.3876845!16zL20vMDEzeXE?hl=es&entry=ttu">Atlanta, EU</a>
+        <a class="has-text-hover-primary" href="tel: +1 404 777 5857">+1 404 777 5857</a>
+        <a class="has-text-hover-primary" href="https://www.google.com/maps/place/Atlanta,+Georgia,+EE.+UU./@33.7675434,-84.5849409,11z/data=!3m1!4b1!4m6!3m5!1s0x88f5045d6993098d:0x66fede2f990b630b!8m2!3d33.748752!4d-84.3876845!16zL20vMDEzeXE?hl=es&entry=ttu">Atlanta, EU</a>
       </div>
     </div>
     {{-- columna 3 --}}
-    <div class="navigation column is-1 has-background-primary" style="overflow: hidden">
+    <div class="navigation column is-1 has-background-primary is-clipped">
       <div class="navigation-plus has-padding-20 has-background-dark is-flex is-justify-content-center is-align-items-center">
         <div class="image is-48x48" style="background: url(@asset('images/plus-circle.svg'))center center/contain no-repeat"></div>
       </div>
       <div class="items-row is-flex is-justify-content-space-around is-full-width has-text-align-center has-padding-top-30 has-padding-bottom-30">
-        <a class="" href="https://www.instagram.com/katherineboean/">Instagram</a>
-        <a class="" href="email: hello@katherineboean.com">Email</a>
-        <a class="" href="https://www.linkedin.com/in/katherine-boean/">Linkedin</a>
-        <a class="" href="https://open.spotify.com/show/3pvnYmHXRIpUHVhFuY9GUW?utm_medium=share&utm_source=linktree">Spotify</a>
+        <a class="has-text-hover-light" href="https://www.instagram.com/katherineboean/">Instagram</a>
+        <a class="has-text-hover-light" href="email: hello@katherineboean.com">Email</a>
+        <a class="has-text-hover-light" href="https://www.linkedin.com/in/katherine-boean/">Linkedin</a>
+        <a class="has-text-hover-light" href="https://open.spotify.com/show/3pvnYmHXRIpUHVhFuY9GUW?utm_medium=share&utm_source=linktree">Spotify</a>
       </div>
     </div>
   </div>
