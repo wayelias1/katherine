@@ -79,6 +79,7 @@ a {
 
   .lets-talk {
     height: 60%;
+    min-height: 500px;
   }
   
   .services {
@@ -100,7 +101,7 @@ a {
 .rotate-270deg{
   transform: rotate(270deg);
 }
-.carrusel{
+.carrusel.start-animation{
   animation: show 4s infinite;
 }
 
@@ -131,29 +132,7 @@ a {
   }
 }
 
-// 
-// media
-// 
 
-@media (min-width: 769px) {
-  .navigation {
-
-    .navigation-plus {
-      padding: 0px !important;
-      aspect-ratio: 1 !important;
-    }
-  
-    .items-row {
-      height: 85%;
-      flex-direction: column;
-      padding-bottom: 100px;
-  
-      a{
-        transform: rotate(270deg);
-      }
-    } 
-  }
-}
 
 .contacts {
   &:before {
@@ -197,4 +176,74 @@ a {
   100% {
     opacity: 0;
   }
+}
+
+// 
+// media
+// 
+
+@media (min-width: 769px) {
+  .navigation {
+
+    .navigation-plus {
+      padding: 0px !important;
+      aspect-ratio: 1 !important;
+    }
+  
+    .items-row {
+      height: 85%;
+      flex-direction: column;
+      padding-bottom: 100px;
+  
+      a{
+        transform: rotate(270deg);
+      }
+    } 
+  }
+}
+
+@media (max-height: 800px){
+  .column.is-6 {
+    overflow: hidden;
+  
+    .lets-talk {
+      height: 70%;
+
+      .middle-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    
+    .services {
+      height: 30%;
+    }
+  }
+
+  .column-image {
+    display: none;
+  }
+  .column-services {
+    flex: none !important;
+    width: 100% !important;
+  }
+  .carrusel {
+    flex-direction: row-reverse !important;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+.is-size-1 {
+  line-height: $size-1;
+}
+.is-size-2 {
+  line-height: $size-2;
+}
+.is-size-3 {
+  line-height: $size-3;
+}
+.is-size-4 {
+  line-height: $size-4;
 }

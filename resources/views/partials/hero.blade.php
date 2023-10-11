@@ -1,9 +1,9 @@
-<div style="height: 100vh">
+<div style="height: 100vh; min-height: 660px">
   <div class="columns is-gapless is-full-height">
     {{-- columna 1 --}}
     <div class="column is-6">
       {{-- primera división --}}
-      <div class="lets-talk has-background-primary has-padding-top-10 has-padding-left-40 has-padding-bottom-40 has-padding-right-40">
+      <div class="lets-talk is-flex is-flex-direction-column is-justify-content-space-between has-background-primary has-padding-top-10 has-padding-left-40 has-padding-bottom-40 has-padding-right-40">
         <a href="https://www.katherineboean.info">
           <img src="@asset('images/logo.svg')" alt="logo" style="width: 32%; min-width: 200px;">
         </a>
@@ -11,12 +11,12 @@
           <div class="column is-1 has-padding-left-10">
             <span class="has-margin-top-20 is-flex is-justify-content-flex-end rotate-270deg" style="text-wrap: nowrap;">Financial Literacy Specialist</span>
           </div>
-          <div class="column is-8 is-offset-2-desktop is-offset-1-mobile" style="width: max-content">
+          <div class="middle-column column is-8 is-offset-2-desktop is-offset-1-mobile" style="width: max-content">
             <span>Business Consultant</span>
-            <h1 class="is-size-1" style="line-height: 8.5rem">Let's</h1>
+            <h1 class="is-size-1">Let's</h1>
             <div class="is-flex">
               @include('partials.decorator', ['color'=>'rgb(0,37,61)'])
-              <h3 class="is-size-3 has-margin-left-30" style="line-height: 5.5rem">talk</h3>
+              <h3 class="is-size-3 has-margin-left-30">talk</h3>
             </div>
           </div>
         </div>
@@ -26,10 +26,10 @@
       </div>
       {{-- segunda división --}}
       <div class="services columns is-multiline is-gapless is-marginless has-background-dark">
-        <div class="column is-7 is-paddingless">
+        <div class="column-image column is-7 is-paddingless">
           <div class="is-full-height" style="background: url(@asset('images/Rectangle-image.svg'))center center/cover no-repeat; opacity:0.5"></div>
         </div>
-        <div class="column is-5 is-clipped" x-data="data">
+        <div class="column column-services is-5 is-clipped" x-data="data">
           <div class="has-text-light has-padding-30 is-full-height is-flex is-flex-direction-column is-justify-content-space-between carrusel active" id="carrusel">
             <p class="is-size-3 has-text-right is-flex is-justify-content-flex-end">
               <span>0</span>
@@ -82,6 +82,7 @@
               },
               init() {
                 let carrusel = document.querySelector('#carrusel');
+                carrusel.classList.add('start-animation')
                 setInterval(() => {
                     this.currentIndex = (this.currentIndex + 1) % this.information.length;
                   }, 4000);
